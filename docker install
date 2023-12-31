@@ -1,0 +1,19 @@
+Install Docker on  Ubuntu
+###########################
+#!/bin/bash
+sudo apt update -y
+sudo apt install docker.io -y
+sudo service docker start
+sudo docker info
+sudo hostnamectl set-hostname docker 
+sudo usermod -aG docker ubuntu
+sudo su - ubuntu    
+ 
+
+ # Amazon Linux
+###########################
+sudo yum update -y    
+sudo yum install docker -y
+sudo service docker start
+sudo usermod -aG docker ec2-user # add's users to docker group for them to run docker commands/tasks
+sudo su - ec2-user
